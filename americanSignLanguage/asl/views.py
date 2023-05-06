@@ -73,3 +73,6 @@ def contactus_view(request):
 
 def about(request):
     return render(request, 'aboutus.html')
+
+def team(request):
+    return render(request, 'team.html')

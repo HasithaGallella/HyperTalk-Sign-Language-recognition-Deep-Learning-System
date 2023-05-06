@@ -7,5 +7,6 @@ urlpatterns = [
     path('imageData',views.imageData,name="imageData"),
     path('sayWord',views.sayWord,name="sayWord"),
     path('contactus/', views.contactus_view, name='contactus'),
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('team/', views.team, name='team'),
 ]
