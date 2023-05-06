@@ -74,3 +74,5 @@ def contactus_view(request):
 
 def about(request):
     return redirect('aboutus.html')
+
+
