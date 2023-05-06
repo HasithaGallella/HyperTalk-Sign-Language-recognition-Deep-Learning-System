@@ -1,6 +1,6 @@
 # import libraries to control django,responces and images  
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.views.decorators import gzip
 import cv2
@@ -24,7 +24,7 @@ engine.setProperty('rate',120)
 # main function to return index.html(render main web page)
 @gzip.gzip_page
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'index_final.html')
 
 
 # function to get images and detect hands,letters and return last image
@@ -67,3 +67,10 @@ def sayWord(request):
             
     return HttpResponse("ok")
 
+
+def contactus_view(request):
+    # print('ok')
+    return render(request, 'contactus.html')
+
+def about(request):
+    return redirect('aboutus.html')

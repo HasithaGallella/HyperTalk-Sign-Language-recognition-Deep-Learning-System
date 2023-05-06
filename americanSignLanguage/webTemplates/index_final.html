@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>HyperTalk</title>
+        <link href="{%static 'assets/myimages/favicon.jpg' %}" rel="icon">
+
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+        <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+        <link
+        href="{%static 'assets_final/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="{%static 'assets_final/vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+        <link
+        rel="stylesheet" href="{%static 'assets/css/custom.css' %}">
+
+        <!-- Template Main CSS File -->
+        <link href="{%static 'assets_final/css/style.css' %}" rel="stylesheet">
+        <link
+        href="{%static 'assets_final/css/custom.css' %}" rel="stylesheet">
+
+
+    <!-- =======================================================
+                                      * Template Name: Vesperr
+                                      * Updated: Mar 10 2023 with Bootstrap v5.2.3
+                                      * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+                                      * Author: BootstrapMade.com
+                                      * License: https://bootstrapmade.com/license/
+                                      ======================================================== -->
+    </head>
+
+    <body>
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
+
+                <div class="logo">
+                    <img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" width="40px" height="40px">
+
+                    <h1>
+                        <a href="index.html">HyperTalk</a>
+                    </h1>
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <!-- <a href="index.html">img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" class="img-fluid"></a>-->
+                </div>
+
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li>
+                            <a class="nav-link scrollto active" href="#hero">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="#team">Team</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link scrollto" href="{% url 'contactus' %}">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="getstarted scrollto" href="#about">Get Started</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                <!-- .navbar -->
+
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="position-relative d-flex align-items-center" style="height: 80vh;">
+            <img src="{% static 'assets_final/img/main_image.jpg' %}" alt="Main Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center text-light">
+                        <h1 class="yellow-text" data-aos="fade-up">REAL-TIME ASL TRANSLATOR</h1>
+                        <h2 class="white-text" data-aos="fade-up" data-aos-delay="400">Converting American sign language to speech</h2>
+                        <div
+                            data-aos="fade-up" data-aos-delay="800">
+                            <!-- Button trigger modal -->
+                            <div data-aos="fade-up" data-aos-delay="800">
+                                <a href="#" class="btn-get-started scrollto btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#sign-language-modal">Sign language to Text</a>
+                                <a href="#" class="btn-services scrollto btn" data-bs-toggle="modal" data-bs-target="#text-to-sign-language-modal">Text to Sign language</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign language to text modal -->
+        <div class="modal fade" id="sign-language-modal" tabindex="-1" aria-labelledby="sign-language-modal-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sign-language-modal-label">Sign language to text</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div
+                        class="modal-body">
+
+                        <!-- machine learningmodel -->
+                        <section class="section coming-soon" data-section="section2">
+                            <div class="px-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <style>
+                                            .displayHide {
+                                                display: none;
+                                            }
+                                        </style>
+                                        <video id="video" width="640" autoplay class="displayHide"></video>
+                                        <canvas id="canvas" width="640" height="480" class="displayHide"></canvas>
+
+                                        <img
+                                        id="srcImage" src="https://amayei.nyc3.digitaloceanspaces.com/2020/12/190605-artificial-intelligence-i-think-therefore-i-am.jpg" alt="" style="width:100%;object-fit:contain;border-radius: 10px;">
+
+                                    <!-- !Loading machine lerning model -->
+                                    </div>
+
+                                    <div class="col-md-12" style="border-radius: 10px">
+                                        <div class="row">
+                                            <div class="container d-flex align-items-center justify-content-center">
+
+                                                <button id="start-camera" class="btn btn-success btn-lg mt-3 mb-3 ">Start Capturing</button>
+                                                <button id="stop-camera" class="btn btn-danger btn-lg mt-3 displayNone mb-3 ">Stop Capturing</button>
+                                                <br>
+                                                <button id="readWord" style="width: 100%;" class="btn btn-warning btn-lg mt-5 displayNone ">Read</button>
+                                            </div>
+
+                                            <div class="col-md-9 mt-5">
+                                                <h4 id="showWord" style="color:rgb(21, 255, 0); word-wrap: break-word;"></h4>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <img src="{%static 'assets/myimages/WhatsApp Image 2022-07-01 at 1.12.33 PM.jpeg' %}" style="width:100%;height:100%;object-fit:scale-down;" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text to sign language modal -->
+        <div class="modal fade" id="text-to-sign-language-modal" tabindex="-1" aria-labelledby="text-to-sign-language-modal-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="text-to-sign-language-modal-label">Text to sign language</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Content for Text to sign language modal goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Hero -->
+
+        <main
+            id="main">
+
+            <!-- ======= Clients Section ======= -->
+            <section id="clients" class="clients clients">
+                <div class="container">
+                    <div class="row" style="height: 50px"></div>
+
+                </div>
+            </section>
+            <!-- End Clients Section -->
+
+
+            <!-- ======= Services Section ======= -->
+            <section id="services" class="services">
+                <div class="container">
+
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Services</h2>
+                        <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <div class="icon">
+                                    <i class="bx bxl-dribbble"></i>
+                                </div>
+                                <h4 class="title">
+                                    <a href="">Lorem Ipsum</a>
+                                </h4>
+                                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon">
+                                    <i class="bx bx-file"></i>
+                                </div>
+                                <h4 class="title">
+                                    <a href="">Sed ut perspiciatis</a>
+                                </h4>
+                                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <div class="icon">
+                                    <i class="bx bx-tachometer"></i>
+                                </div>
+                                <h4 class="title">
+                                    <a href="">Magni Dolores</a>
+                                </h4>
+                                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                                <div class="icon">
+                                    <i class="bx bx-world"></i>
+                                </div>
+                                <h4 class="title">
+                                    <a href="">Nemo Enim</a>
+                                </h4>
+                                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Services Section -->
+
+            <!-- ======= More Services Section ======= -->
+            <section id="more-services" class="more-services">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-stretch">
+                            <div class="card" style='background-image: url("assets/img/more-services-1.jpg");' data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="">Lobira Duno</a>
+                                    </h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
+                                    <div class="read-more">
+                                        <a href="#">
+                                            <i class="bi bi-arrow-right"></i>
+                                            Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                            <div class="card" style='background-image: url("assets/img/more-services-2.jpg");' data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="">Limere Radses</a>
+                                    </h5>
+                                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem.</p>
+                                    <div class="read-more">
+                                        <a href="#">
+                                            <i class="bi bi-arrow-right"></i>
+                                            Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="card" style='background-image: url("assets/img/more-services-3.jpg");' data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="">Nive Lodo</a>
+                                    </h5>
+                                    <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores.</p>
+                                    <div class="read-more">
+                                        <a href="#">
+                                            <i class="bi bi-arrow-right"></i>
+                                            Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="card" style='background-image: url("assets/img/more-services-4.jpg");' data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="">Pale Treda</a>
+                                    </h5>
+                                    <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem.</p>
+                                    <div class="read-more">
+                                        <a href="#">
+                                            <i class="bi bi-arrow-right"></i>
+                                            Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End More Services Section -->
+
+
+            <!-- ======= Testimonials Section ======= -->
+            <section id="testimonials" class="testimonials section-bg">
+                <div class="container">
+
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Testimonials</h2>
+                        <p>Magnam dolores commodi suscipit eum quidem consectetur velit</p>
+                    </div>
+
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                        <h3>Saul Goodman</h3>
+                                        <h4>Ceo &amp; Founder</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                        <h3>Sara Wilsson</h3>
+                                        <h4>Designer</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                        <h3>Jena Karlis</h3>
+                                        <h4>Store Owner</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                        <h3>Matt Brandon</h3>
+                                        <h4>Freelancer</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                        <h3>John Larson</h3>
+                                        <h4>Entrepreneur</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End testimonial item -->
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Testimonials Section -->
+
+
+            <!-- ======= Team Section ======= -->
+            <section id="team" class="team section-bg">
+                <div class="container">
+
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Team</h2>
+                        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="200">
+                                <div class="member-img">
+                                    <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Sarah Jhonson</h4>
+                                    <span>Product Manager</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="300">
+                                <div class="member-img">
+                                    <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>William Anderson</h4>
+                                    <span>CTO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="400">
+                                <div class="member-img">
+                                    <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Amanda Jepson</h4>
+                                    <span>Accountant</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Team Section -->
+
+
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+                <div class="container">
+
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Contact Us</h2>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-about">
+                                <h3>HyperTalk</h3>
+                                <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                                <div class="social-links">
+                                    <a href="#" class="twitter">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a href="#" class="facebook">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="#" class="instagram">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <a href="#" class="linkedin">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                            <div class="info">
+                                <div>
+                                    <i class="ri-map-pin-line"></i>
+                                    <p>A108 Adam Street<br>New York, NY 535022</p>
+                                </div>
+
+                                <div>
+                                    <i class="ri-mail-send-line"></i>
+                                    <p>info@example.com</p>
+                                </div>
+
+                                <div>
+                                    <i class="ri-phone-line"></i>
+                                    <p>+1 5589 55488 55s</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Contact Section -->
+
+        </main>
+        <!-- End #main -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright">
+                            &copy; Copyright
+                            <strong>Vesperr</strong>. All Rights Reserved
+                        </div>
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+                            Designed by
+                                <a href="https://bootstrapmade.com/"> BootstrapMade</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                            <a href="#intro" class="scrollto">Home</a>
+                            <a href="#about" class="scrollto">About</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Use</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
+
+        <!-- Vendor JS Files -->
+        <script src="{%static 'assets_final/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/aos/aos.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/php-email-form/validate.js' %}"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{%static 'assets_final/js/main.js' %}"></script>
+
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+
+
+        <!-- <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script> -->
+        <!-- <script src="{%static 'static/vendor/jquery/bootstrap.min.js' %}"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+        <script src="{%static 'assets/js/isotope.min.js' %}"></script>
+        <script src="{%static 'assets/js/owl-carousel.js' %}"></script>
+        <script src="{%static 'assets/js/lightbox.js' %}"></script>
+        <script src="{%static 'assets/js/tabs.js' %}"></script>
+        <script src="{%static 'assets/js/video.js' %}"></script>
+        <script src="{%static 'assets/js/slick-slider.js' %}"></script>
+        <script src="{%static 'assets/js/custom.js' %}"></script>
+
+        <script>
+            // according to loftblog tut
+            $('.nav li:first').addClass('active');
+
+            var showSection = function showSection(section, isAnimate) {
+                var direction = section.replace(/#/, ''),
+                    reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                    reqSectionPos = reqSection.offset().top - 0;
+
+                if (isAnimate) {
+                    $('body, html').animate({
+                        scrollTop: reqSectionPos
+                    }, 800);
+                } else {
+                    $('body, html').scrollTop(reqSectionPos);
+                }
+
+            };
+
+            var checkSection = function checkSection() {
+                $('.section').each(function () {
+                    var $this = $(this),
+                        topEdge = $this.offset().top - 80,
+                        bottomEdge = topEdge + $this.height(),
+                        wScroll = $(window).scrollTop();
+                    if (topEdge < wScroll && bottomEdge > wScroll) {
+                        var currentId = $this.data('section'),
+                            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                        reqLink.closest('li').addClass('active').siblings().removeClass('active');
+                    }
+                });
+            };
+
+            $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+                if ($(e.target).hasClass('external')) {
+                    return;
+                }
+                e.preventDefault();
+                $('#menu').removeClass('active');
+                showSection($(this).attr('href'), true);
+            });
+
+            $(window).scroll(function () {
+                checkSection();
+            });
+        </script>
+
+        <script>
+            var isactivated = false;
+            $(document).ready(function () {
+                // var html="<div class=\"backgroundImage mx-auto text-center\" style=\"height:600px;background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url( 'https://www.ohio.edu/sites/ohio.edu.news/files/2020-04/ASL_CHSP_Apr2020.jpeg');\"><img  id=\"modelImage\"src=\"{%static 'assets/myimages/pngwing.com.png'%}\" alt=\"\"></div>";
+                // $("#modelDiv").html(html);
+            });
+            let camera_button = document.querySelector("#start-camera");
+            let video = document.querySelector("#video");
+            let click_button = document.querySelector("#click-photo");
+            let canvas = document.querySelector("#canvas");
+            let stopCamera = document.getElementById("stop-camera");
+            let srcImage = document.getElementById("srcImage");
+            let showWord = document.getElementById("showWord");
+            let readWord = document.getElementById("readWord");
+            let stream;
+            let looping = false;
+            let word = "";
+            let letter = "";
+
+            // start captureing
+            camera_button.addEventListener('click', async function () {
+                stream = await navigator.mediaDevices.getUserMedia({video: true, audio: false});
+                video.srcObject = stream;
+                looping = true;
+                camera_button.classList.add("displayNone");
+                stopCamera.classList.remove("displayNone");
+                readWord.classList.add("displayNone");
+                word = "";
+                showWord.innerHTML = word;
+                getImage();
+
+
+            });
+
+            // stop captureing
+            stopCamera.addEventListener('click', function () {
+                camera_button.classList.remove("displayNone");
+                stopCamera.classList.add("displayNone");
+                looping = false;
+                stream.getTracks().forEach(function (track) {
+                    track.stop();
+                });
+
+            });
+
+            // reading word
+            readWord.addEventListener('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/sayWord",
+                    data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        word: word
+                    },
+                    success: function (data) {}
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode == 32 && event.target == document.body) {
+                    event.preventDefault();
+                }
+                let pattern = /[a-zA-Z0-9\.]/;
+                let key = event.keyCode;
+                if (looping) {
+                    if (key == 13) {
+                        if (letter == "SPACE") {
+                            word += " "
+                        } else {
+                            word += letter;
+                        }
+                    } else if (key == 32) {
+                        word += " ";
+                    } else if (key == 8) {
+                        word = word.slice(0, -1);
+                    } else if (pattern.test(String.fromCharCode(key))) {
+                        word += String.fromCharCode(key);
+                    }
+                    showWord.innerHTML = word;
+                    if (word.length > 0) {
+                        readWord.classList.remove("displayNone");
+                    } else {
+                        readWord.classList.add("displayNone");
+                    }
+                }
+            });
+
+
+            function getImage() {
+                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                let image_data_url = canvas.toDataURL('image/jpeg');
+                $.ajax({ // async:false,
+                    type: "POST",
+                    url: "/imageData",
+                    data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        image: image_data_url
+                    },
+                    success: function (data) {
+                        d = data['image'].slice(2, -1)
+                        if (looping) {
+                            srcImage.src = "data:image/jpeg;base64," + d;
+                            letter = data['letter'];
+                            getImage();
+                        } else {
+                            srcImage.src = "https://amayei.nyc3.digitaloceanspaces.com/2020/12/190605-artificial-intelligence-i-think-therefore-i-am.jpg";
+                        }
+                    }
+                });
+            }
+        </script>
+
+    </body>
+
+</html>
