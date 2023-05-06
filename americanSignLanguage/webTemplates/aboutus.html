@@ -1,39 +1,101 @@
-            <!-- ======= About Us Section ======= -->
-            <section id="about" class="about">
-                <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
 
-                    <div class="section-title" data-aos="fade-up">
-                        <h2>About Us</h2>
-                    </div>
+        <link href="{%static 'assets_final/css/style.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{%static 'assets_final/css/custom.css' %}" rel="stylesheet">
+    </head>
 
-                    <div class="row content">
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                                                                                                                                                                                                              magna aliqua.
-                            </p>
-                            <ul>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                            <p>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                                                                                                                                                                                                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                                                                                                                                                                                                              culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="btn-learn-more">Learn More</a>
-                        </div>
-                    </div>
+    <body>
 
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-between">
+
+                <div class="logo">
+                    <img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" width="40px" height="40px">
+
+                    <h1>
+                        <a href="index.html">HyperTalk</a>
+                    </h1>
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <!-- <a href="index.html">img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" class="img-fluid"></a>-->
                 </div>
-            </section>
-            <!-- End About Us Section -->
+
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li>
+                            <a class="nav-link scrollto active" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="#team">Team</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link scrollto" href="{% url 'contactus' %}">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="getstarted scrollto" href="#about">Get Started</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                <!-- .navbar -->
+
+            </div>
+        </header>
+        <!-- End Header -->
+
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>About Us</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                                                                                                                                                                                                                                                                                  magna aliqua.
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <p>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                                                                                                                                                                                                                                                                                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                                                                                                                                                                                                                                                                                  culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Us Section -->
+    </body>
+
+</html>

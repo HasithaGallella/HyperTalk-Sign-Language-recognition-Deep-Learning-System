@@ -69,8 +69,7 @@ def sayWord(request):
 
 
 def contactus_view(request):
-    # print('ok')
     return render(request, 'contactus.html')
 
 def about(request):
-    return redirect('aboutus.html')
+    return render(request, 'aboutus.html')

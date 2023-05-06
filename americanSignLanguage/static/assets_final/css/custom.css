@@ -23,3 +23,7 @@
     flex-wrap: nowrap;
     gap: 1rem;
 }
+
+.contact {
+    margin-top: 70px;
+}
