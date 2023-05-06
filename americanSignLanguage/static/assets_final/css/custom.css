@@ -43,3 +43,8 @@
 .hypertalk-logo {
     border-radius: 10px;
 }
+
+.custom-modal .modal-dialog {
+    max-width: 700px;
+  }
+  

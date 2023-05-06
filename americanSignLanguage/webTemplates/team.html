@@ -12,12 +12,11 @@
         <link href="{%static 'assets_final/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{%static 'assets_final/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
         <link href="{%static 'assets_final/css/custom.css' %}" rel="stylesheet">
-
     </head>
 
 
     <body>
-        <!-- ======= Header ======= -->
+
         <header id="header" class="fixed-top d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
 
@@ -34,7 +33,7 @@
                 <nav id="navbar" class="navbar">
                     <ul>
                         <li>
-                            <a class="nav-link scrollto active" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link scrollto active" href="#hero">Home</a>
                         </li>
                         <li>
                             <a class="nav-link scrollto" href="{% url 'about' %}">About</a>
@@ -47,7 +46,7 @@
                             <a class="nav-link scrollto" href="{% url 'contactus' %}">Contact Us</a>
                         </li>
                         <li>
-                            <a class="getstarted scrollto" href="#about">Get Started</a>
+                            <a class="getstarted scrollto" href="{% url 'about' %}">Get Started</a>
                         </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -56,7 +55,6 @@
 
             </div>
         </header>
-        <!-- End Header -->
 
 
         <!-- ======= Team Section ======= -->
@@ -65,8 +63,8 @@
             <div class="section-title team" data-aos="fade-up">
                 <h2>Team</h2>
                 <h3>HyperBits</h3>
-                <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p> -->
             </div>
+
             <div class="container col-8">
                 <div class="row text-center">
 
@@ -157,24 +155,29 @@
                 </div>
             </div>
         </div>
-    </body>
-</html></section><!-- End Team Section --><!-- ======= Footer ======= --><footer id="footer">
-<div class="container">
-    <div class="row d-flex align-items-center">
-        <div class="col-lg-6 text-lg-left text-center">
-            <div class="copyright">
-                &copy; Copyright
-                <strong>HyperTalk</strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-                Designed by
-                    <a href="{% url 'team' %}"> HyperBits</a>
+    </section>
+    <!-- End Team Section -->
+    
+    
+    
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        &copy; Copyright
+                        <strong>HyperTalk</strong>. All Rights Reserved
+                    </div>
+
+                    <div class="credits">
+                        Designed by
+                        <a href="{% url 'team' %}"> HyperBits</a>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="col-lg-6">
             <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
                 <a href="{% url 'home' %}" class="scrollto">Home</a>
@@ -183,9 +186,9 @@
                 <a href="#">Terms of Use</a>
             </nav>
         </div>
-    </div>
-</div></footer><!-- End Footer -->
+    </footer>
+    <!-- End Footer -->     
 
-    </body>
+</body>
 </html>
 
