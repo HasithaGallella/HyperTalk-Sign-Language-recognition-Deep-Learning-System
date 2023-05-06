@@ -6,11 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Us</title>
+        <link href="{%static 'assets/myimages/favicon.jpg' %}" rel="icon">
 
         <link href="{%static 'assets_final/css/style.css' %}" rel="stylesheet">
         <link href="{%static 'assets_final/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{%static 'assets_final/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
         <link href="{%static 'assets_final/css/custom.css' %}" rel="stylesheet">
+
+        <style>
+            #footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
     </head>
 
     <body>
@@ -20,7 +29,7 @@
             <div class="container d-flex align-items-center justify-content-between">
 
                 <div class="logo">
-                    <img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" width="40px" height="40px">
+                    <img src="{%static 'assets/myimages/favicon.jpg'%}" alt="" width="40px" height="40px" class="hypertalk-logo">
 
                     <h1>
                         <a href="index.html">HyperTalk</a>
@@ -68,26 +77,26 @@
                 <div class="row content">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                                                                                                                                                                                                                                                                                  magna aliqua.
+                            Welcome to our website! We are a team of passionate individuals dedicated to
+                                                        making communication more accessible for everyone. Our mission is to break down
+                                                        barriers and empower people to connect with each other, regardless of their 
+                                                        background or abilities.
                         </p>
-                        <ul>
-                            <li>
-                                <i class="ri-check-double-line"></i>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                            <li>
-                                <i class="ri-check-double-line"></i>
-                                Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                            <li>
-                                <i class="ri-check-double-line"></i>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                        </ul>
+
+                        <p>
+                            Our team brings together experts in technology, design, and accessibility to create
+                                                        innovative solutions that make a real difference in people's lives. We are committed
+                                                        to pushing the boundaries of what's possible and to continuously improving our products
+                                                        and services.
+                        </p>
                     </div>
+
                     <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                                                                                                                                                                                                                                                                                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                                                                                                                                                                                                                                                                                  culpa qui officia deserunt mollit anim id est laborum.
+                            Whether you are a business looking to improve accessibility for your customers, 
+                                                        a student looking to learn more about sign language, or simply someone who is 
+                                                        passionate about creating a more inclusive world, we are here to help. Thank you 
+                                                        for visiting our site, and we look forward to working with you!
                         </p>
                         <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
@@ -96,6 +105,60 @@
             </div>
         </section>
         <!-- End About Us Section -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright">
+                            &copy; Copyright
+                            <strong>HyperTalk</strong>. All Rights Reserved
+                        </div>
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+                            Designed by
+                                <a href="{% url 'team' %}"> HyperBits</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                            <a href="{% url 'home' %}" class="scrollto">Home</a>
+                            <a href="{% url 'about' %}" class="scrollto">About</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Use</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Vendor JS Files -->
+        <script src="{%static 'assets_final/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/aos/aos.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{%static 'assets_final/vendor/php-email-form/validate.js' %}"></script>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{%static 'assets_final/js/nav.js' %}"></script>
+        <script src="{%static 'assets_final/js/main.js' %}"></script>
+
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+    
     </body>
 
 </html>

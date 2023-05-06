@@ -29,5 +29,17 @@
 }
 
 .team {
+    margin-top: 30px;
+}
+
+.about {
     margin-top: 40px;
+}
+
+.member-img {
+    height: 50vh;
+}
+
+.hypertalk-logo {
+    border-radius: 10px;
 }
