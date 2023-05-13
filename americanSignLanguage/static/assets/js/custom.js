@@ -91,17 +91,21 @@
 	  }
 	  
 	  function initializeClock(endtime){
-	  var timeinterval = setInterval(function(){
-	    var t = getTimeRemaining(endtime);
-	    document.querySelector(".days > .value").innerText=t.days;
-	    document.querySelector(".hours > .value").innerText=t.hours;
-	    document.querySelector(".minutes > .value").innerText=t.minutes;
-	    document.querySelector(".seconds > .value").innerText=t.seconds;
-	    if(t.total<=0){
-	      clearInterval(timeinterval);
-	    }
-	  },1000);
-	}
+		var timeinterval = setInterval(function() {
+			var t = getTimeRemaining(endtime);
+			var daysElement = document.querySelector(".days > .value");
+			var hoursElement = document.querySelector(".hours > .value");
+			var minutesElement = document.querySelector(".minutes > .value");
+			var secondsElement = document.querySelector(".seconds > .value");
+			if (daysElement) daysElement.innerText = t.days;
+			if (hoursElement) hoursElement.innerText = t.hours;
+			if (minutesElement) minutesElement.innerText = t.minutes;
+			if (secondsElement) secondsElement.innerText = t.seconds;
+			if (t.total <= 0) {
+			  clearInterval(timeinterval);
+			}
+		  }, 1000);
+			}
 	initializeClock(((new Date()).getFullYear()+1) + "/1/1")
 	})()
 
