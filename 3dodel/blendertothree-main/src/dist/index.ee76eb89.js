@@ -560,34 +560,46 @@ function hmrAccept(bundle, id) {
 var _three = require("three");
 var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
 var _gltfloaderJs = require("three/examples/jsm/loaders/GLTFLoader.js");
-const monkeyUrl = new URL(require("21c5691b00785ed3"));
+const monkeyUrl = new URL(require("6a88da7664c5c14b"));
 const renderer = new _three.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+renderer.setSize(600, 400);
+const container = document.createElement("div");
+container.appendChild(renderer.domElement);
+document.getElementById("myDiv").appendChild(container);
 const scene = new _three.Scene();
-const camera = new _three.PerspectiveCamera(15, window.innerWidth / window.innerHeight, 0.1, 1000);
-renderer.setClearColor(0xA3A3A3);
+const camera = new _three.PerspectiveCamera(15, 1.5, 0.1, 1000);
+renderer.setClearColor("#e7f6fe");
 const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElement);
-camera.position.set(10, 10, 10);
+camera.position.set(2.5, 1, 0);
+const ambientLight = new _three.AmbientLight(0xffffff, 0.8);
+scene.add(ambientLight);
+const directionalLight = new _three.DirectionalLight(0xffffff, 0.2);
+directionalLight.position.set(0, 1, 0);
+scene.add(directionalLight);
+renderer.render(scene, camera);
+console.log(camera.position.x, camera.position.y, camera.position.z);
+console.log(camera.rotation.x, camera.rotation.y, camera.rotation.z);
 orbit.update();
-const grid = new _three.GridHelper(30, 30);
-scene.add(grid);
+// const grid = new THREE.GridHelper(30, 30);
+// scene.add(grid);
 const assetLoader = new (0, _gltfloaderJs.GLTFLoader)();
 let mixer;
 assetLoader.load(monkeyUrl.href, function(gltf) {
     const model = gltf.scene;
+    model.position.set(0, -0.6, 0);
     scene.add(model);
     mixer = new _three.AnimationMixer(model);
     const clips = gltf.animations;
     // Play a certain animation
-    // const clip = THREE.AnimationClip.findByName(clips, 'HeadAction');
-    // const action = mixer.clipAction(clip);
-    // action.play();
-    // Play all animations at the same time
-    clips.forEach(function(clip) {
-        const action = mixer.clipAction(clip);
-        action.play();
-    });
+    const clip = _three.AnimationClip.findByName(clips, "letterA");
+    const action = mixer.clipAction(clip);
+    action.play();
+    const bone = gltf.scene.getObjectByName("mixamorigLeftHand");
+// Play all animations at the same time
+// clips.forEach(function(clip) {
+//     const action = mixer.clipAction(clip);
+//     action.play();
+// });
 }, undefined, function(error) {
     console.error(error);
 });
@@ -603,7 +615,7 @@ window.addEventListener("resize", function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/loaders/GLTFLoader.js":"dVRsF","21c5691b00785ed3":"1IQFj"}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/loaders/GLTFLoader.js":"dVRsF","6a88da7664c5c14b":"hYh8L"}],"ktPTu":[function(require,module,exports) {
 /**
  * @license
  * Copyright 2010-2021 Three.js Authors
@@ -32895,10 +32907,10 @@ function buildNodeHierarchy(nodeId, parentObject, json, parser) {
     return newGeometry;
 }
 
-},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"60ma2"}],"1IQFj":[function(require,module,exports) {
-module.exports = require("2abee53826b76b5b").getBundleURL("l9VzU") + "letter.8fe8d3f7.glb" + "?" + Date.now();
+},{"three":"ktPTu","@parcel/transformer-js/src/esmodule-helpers.js":"60ma2"}],"hYh8L":[function(require,module,exports) {
+module.exports = require("9271459d45c2981").getBundleURL("l9VzU") + "scene.f4eb58a2.glb" + "?" + Date.now();
 
-},{"2abee53826b76b5b":"9j7Qu"}],"9j7Qu":[function(require,module,exports) {
+},{"9271459d45c2981":"9j7Qu"}],"9j7Qu":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
