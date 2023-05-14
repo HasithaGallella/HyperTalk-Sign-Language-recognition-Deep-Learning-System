@@ -54,6 +54,18 @@
     margin-left: 20px;
 }
 
+.sign2speech-model-header {
+    background-color: #3442db;
+    color: #fff;
+    font-weight: bold;
+}
+
+.speech2sign-model-header {
+    background-color: #09801b;
+    color: #fff;
+    font-weight: bold;
+}
+
 
 @media only screen and (max-width: 990px) {
     .logo-img {
@@ -74,7 +86,7 @@
         margin-top: 10px;
     }
 
-    .btn {
+    .scrollto {
         width: 80% !important;
     }
 
@@ -93,5 +105,16 @@
     .info {
         display: none;
     }
+
+
+
+}
+
+@media only screen and (max-width: 760px) {
+    .video-size {
+        width: 92vw;
+        margin-left: 0;
+    }
+
 
 }

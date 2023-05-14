@@ -113,7 +113,7 @@
         <div class="modal fade custom-modal" id="sign-language-modal" tabindex="-1" aria-labelledby="sign-language-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header sign2speech-model-header">
                         <h5 class="modal-title" id="sign-language-modal-label">Sign language to Speech</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -121,20 +121,20 @@
                         class="modal-body">
 
                         <!-- machine learningmodel -->
-                        <section class="section coming-soon" data-section="section2">
-                            <div class="px-5">
+                        <section class="section coming-soon video-size" data-section="section2">
+                            <div class="">
                                 <div class="row">
-                                    <div class="col-md-12 col-xs-12 video-cam">
+                                    <div class="col-md-12 col-xs-12 video-size">
                                         <style>
                                             .displayHide {
                                                 display: none;
                                             }
                                         </style>
-                                        <video id="video" width="800" autoplay class="displayHide"></video>
+                                        <video id="video" width="640" autoplay class="displayHide"></video>
                                         <canvas id="canvas" width="640" height="480" class="displayHide"></canvas>
 
                                         <img
-                                        id="srcImage" src="https://amayei.nyc3.digitaloceanspaces.com/2020/12/190605-artificial-intelligence-i-think-therefore-i-am.jpg" alt="" style="width:100%;object-fit:contain;border-radius: 10px;">
+                                        id="srcImage" src="https://amayei.nyc3.digitaloceanspaces.com/2020/12/190605-artificial-intelligence-i-think-therefore-i-am.jpg" alt="" style="width:100%; object-fit:contain; border-radius: 10px;">
 
                                     <!-- !Loading machine lerning model -->
                                     </div>
@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary model-close" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
         <div class="modal fade custom-modal" id="text-to-sign-language-modal" tabindex="-1" aria-labelledby="text-to-sign-language-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header speech2sign-model-header">
                         <h5 class="modal-title" id="text-to-sign-language-modal-label">Speech to sign language</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -192,7 +192,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary model-close" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
