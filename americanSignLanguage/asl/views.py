@@ -24,7 +24,8 @@ engine.setProperty('rate',120)
 # main function to return index.html(render main web page)
 @gzip.gzip_page
 def home(request):
-    return render(request, 'index_final.html')
+    return HttpResponse("Page not found")
+    # return render(request, 'index_final.html')
 
 
 # function to get images and detect hands,letters and return last image
@@ -53,7 +54,9 @@ def imageData(request):
 
 
 # function for talking part
+@csrf_exempt
 def sayWord(request):
+    # print("*"*100)
     global engine
     if request.method == "POST":
         word = request.POST.get('word').lower()

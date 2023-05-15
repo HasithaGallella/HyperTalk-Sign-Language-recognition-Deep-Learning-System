@@ -6,7 +6,7 @@ const monkeyUrl = new URL('../assets/scene.glb', import.meta.url);
 
 const renderer = new THREE.WebGLRenderer();
 
-renderer.setSize(600, 400);
+// renderer.setSize(600, 400);
 
 const container = document.createElement('div');
 container.appendChild(renderer.domElement);

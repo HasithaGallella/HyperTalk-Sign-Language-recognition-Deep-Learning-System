@@ -562,7 +562,7 @@ var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
 var _gltfloaderJs = require("three/examples/jsm/loaders/GLTFLoader.js");
 const monkeyUrl = new URL(require("6a88da7664c5c14b"));
 const renderer = new _three.WebGLRenderer();
-renderer.setSize(600, 400);
+// renderer.setSize(600, 400);
 const container = document.createElement("div");
 container.appendChild(renderer.domElement);
 document.getElementById("myDiv").appendChild(container);

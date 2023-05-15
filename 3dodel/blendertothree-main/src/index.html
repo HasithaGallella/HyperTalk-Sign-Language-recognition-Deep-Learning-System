@@ -123,10 +123,10 @@
                 <div class="modal-body">
 
                     <!-- machine learningmodel -->
-                    <section class="section coming-soon video-size" data-section="section2">
+                    <section class="section coming-soon video-size" style="padding-top: 0px;" data-section="section2">
                         <div class="">
                             <div class="row">
-                                <div class="col-md-12 col-xs-12 video-size">
+                                <div class="col-md-12 col-xs-12 video-size mt-0">
                                     <style>
                                         .displayHide {
                                             display: none;
@@ -137,28 +137,29 @@
 
                                     <img id="srcImage"
                                         src="https://amayei.nyc3.digitaloceanspaces.com/2020/12/190605-artificial-intelligence-i-think-therefore-i-am.jpg"
-                                        alt="" style="width:100%; object-fit:contain; border-radius: 10px;">
+                                        alt="" style="width:90%; object-fit:contain; border-radius: 10px;">
 
                                     <!-- !Loading machine lerning model -->
                                 </div>
 
                                 <div class="col-md-12" style="border-radius: 10px">
                                     <div class="row">
-                                        <div
-                                            class="container d-flex flex-column align-items-center justify-content-center">
-                                            <button id="start-camera" class="btn btn-success btn-lg mt-4 mb-3">Start
-                                                Capturing</button>
-                                            <button id="stop-camera" style="margin-top: 20px"
-                                                class="btn btn-danger btn-lg mb-3 displayNone">Stop Capturing</button>
-                                            <button id="readWord" style="width: 100%;"
-                                                class="btn btn-warning btn-lg mt-5 displayNone">Read</button>
-                                        </div>
-
-
-                                        <div class="col-md-9 mt-5">
+                                        <div class="col-md-9 mt-2">
                                             <h4 id="showWord" style="color:rgb(21, 255, 0); word-wrap: break-word;">
                                             </h4>
                                         </div>
+                                        <div
+                                            class="container d-flex flex-column align-items-center justify-content-center">
+                                            <button id="start-camera" class="btn btn-success btn-lg mt-2 mb-1">Start
+                                                Capturing</button>
+                                            <button id="stop-camera" style="margin-top: 5px"
+                                                class="btn btn-danger btn-lg mb-1 displayNone">Stop Capturing</button>
+                                            <button id="readWord" style="width: 100%;"
+                                                class="btn btn-warning btn-lg mt-1 mb-1 displayNone">Read</button>
+                                        </div>
+
+
+                                        
 
                                         <div class="col-md-12">
                                             <img src="static/assets/myimages/WhatsApp Image 2022-07-01 at 1.12.33 PM.jpeg"
@@ -189,17 +190,29 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div>
-                        <div id='result'>
-                            Your text will appear here
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 video-size">
+                            <!-- load hang model -->
+                            <div id="myDiv">
+                            </div>
                         </div>
-                        <br>
-                        <div id='record'>
-                            <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
-                            <button class='btn btn-info btn-sm ml-3' value="Send" id="send">Send</button>
+                        <div class="col-md-12 mb-3" >
+
+                            <div id='result'>
+                                Your text will appear here
+                            </div>
+                            <br>
+                            <div id='record'>
+                                <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
+                                <button class='btn btn-info btn-sm ml-3' value="Send" id="send">Send</button>
+                            </div>
                         </div>
+
                     </div>
 
+
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary model-close" data-bs-dismiss="modal">Close</button>
@@ -335,7 +348,7 @@
     <!-- <script type="module"src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script type="module" src="static/assets_final/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="static/assets_final/vendor/glightbox/js/glightbox.min.js"></script>
-    <script type="module" src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script  src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script type="module" src="static/assets_final/vendor/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="static/assets_final/vendor/php-email-form/validate.js"></script>
 
@@ -344,26 +357,27 @@
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     <!-- <script type="module" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script type="module" src="static/assets/js/isotope.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <!-- <script type="module" src="static/assets/js/isotope.min.js"></script> -->
     <script type="module" src="static/assets/js/owl-carousel.js"></script>
     <script type="module" src="static/assets/js/lightbox.js"></script>
     <script type="module" src="static/assets/js/tabs.js"></script>
     <script type="module" src="static/assets/js/video.js"></script>
     <script type="module" src="static/assets/js/slick-slider.js"></script>
     <script type="module" src="static/assets/js/custom.js"></script>
-
+       <script src="./js/scripts.js" type="module"></script>
     <script type="module">
+
         import AOS from 'aos';
         import 'aos/dist/aos.css';
-        const $ = require('jquery');
+        // const $ = require('jquery');
 
         // Initialize AOS
         AOS.init();
@@ -414,16 +428,18 @@
         });
     </script>
 
-    <script type="module">
+    <script>
+       
         var isactivated = false;
         $(document).ready(function () {
             // var html="<div class=\"backgroundImage mx-auto text-center\" style=\"height:600px;background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url( 'https://www.ohio.edu/sites/ohio.edu.news/files/2020-04/ASL_CHSP_Apr2020.jpeg');\"><img  id=\"modelImage\"src=\"static/assets/myimages/pngwing.com.png'%}\" alt=\"\"></div>";
             // $("#modelDiv").html(html);
         });
-        let camera_button = document.querySelector("#start-camera");
-        let video = document.querySelector("#video");
-        let click_button = document.querySelector("#click-photo");
-        let canvas = document.querySelector("#canvas");
+        let finalUrl='http://127.0.0.1:8000';
+        let camera_button = document.getElementById("start-camera");
+        let video = document.getElementById("video");
+        let click_button = document.getElementById("click-photo");
+        let canvas = document.getElementById("canvas");
         let stopCamera = document.getElementById("stop-camera");
         let srcImage = document.getElementById("srcImage");
         let showWord = document.getElementById("showWord");
@@ -432,9 +448,10 @@
         let looping = false;
         let word = "";
         let letter = "";
-
+        // alert("ok");
         // start captureing
         camera_button.addEventListener('click', async function () {
+           
             stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
             video.srcObject = stream;
             looping = true;
@@ -461,9 +478,10 @@
 
         // reading word
         readWord.addEventListener('click', function () {
+            // alert("ok");
             $.ajax({
                 type: "POST",
-                url: "/sayWord",
+                url: finalUrl+"/sayWord",
                 data: {
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     word: word
@@ -507,7 +525,7 @@
             let image_data_url = canvas.toDataURL('image/jpeg');
             $.ajax({ // async:false,
                 type: "POST",
-                url: "/imageData",
+                url: finalUrl+"/imageData",
                 data: {
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     image: image_data_url
@@ -526,7 +544,7 @@
         }
     </script>
 
-    <script type="module">
+    <script>
         function startConverting() {
             document.getElementById("re").style.visibility = "hidden";
             var r = document.getElementById('result');
@@ -556,7 +574,7 @@
             $("#send").click(function (event) {
                 $.ajax({
                     type: "POST",
-                    url: "/audio_data/",
+                    url: finalUrl+"/audio_data/",
                     data: {
                         send: $('#result').html()
                     },
