@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aos": "^2.3.4",
+    "desandro-matches-selector": "^2.0.2",
+    "get-style-property": "^0.1.1",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.7.0",
     "three": "^0.133.1"
   },
   "devDependencies": {

@@ -1,0 +1,175 @@
+.main-header {
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.logo a {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu-link {
+  display: none;
+}
+
+.main-menu {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.main-menu li {
+  margin: 0 10px;
+}
+
+.main-menu li a {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+}
+
+.main-menu li a:hover {
+  color: #ff8c00;
+}
+
+.sub-menu > li {
+  background-color: #f9f9f9;
+}
+
+.sub-menu li a {
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  transition: background-color .2s;
+  display: block;
+}
+
+.sub-menu li:last-child a {
+  border-bottom: none;
+}
+
+.sub-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+.main-banner {
+  height: 100vh;
+  position: relative;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-overlay {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.caption {
+  text-align: center;
+}
+
+.caption h6 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.caption h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.caption h2 em {
+  color: #777;
+  font-style: normal;
+}
+
+.main-button {
+  margin-top: 40px;
+}
+
+.main-button .scroll-to-section a {
+  color: #fff;
+  background-color: #333;
+  border-radius: 50px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+}
+
+.main-button .scroll-to-section a:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+.main-button .scroll-to-section a {
+  background-color: #ff8c00;
+  border: 2px solid #ff8c00;
+}
+
+.video-overlay {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 7px;
+  left: 0;
+}
+
+.caption h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+section.coming-soon .col-md-6 img #machineModel {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+section.coming-soon .col-md-2 #stopButton button:hover {
+  background-color: #ff1744;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+}
+
+.logo img {
+  margin: 0 20px 0 auto;
+  display: block;
+}
+
+.menu-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=index.2714f898.css.map */

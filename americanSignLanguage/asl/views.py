@@ -68,11 +68,11 @@ def sayWord(request):
     return HttpResponse("ok")
 
 
-def contactus_view(request):
-    return render(request, 'contactus.html')
+# def contactus_view(request):
+#     return render(request, 'contactus.html')
 
-def about(request):
-    return render(request, 'aboutus.html')
+# def about(request):
+#     return render(request, 'aboutus.html')
 
-def team(request):
-    return render(request, 'team.html')
+# def team(request):
+#     return render(request, 'team.html')
