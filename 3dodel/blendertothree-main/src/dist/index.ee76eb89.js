@@ -563,11 +563,12 @@ var _gltfloaderJs = require("three/examples/jsm/loaders/GLTFLoader.js");
 const monkeyUrl = new URL(require("6a88da7664c5c14b"));
 const renderer = new _three.WebGLRenderer();
 // renderer.setSize(600, 400);
-const container = document.createElement("div");
+let aspactRatio = 1.5;
+const container = document.getElementById("myDiv");
+// container.appendChild(renderer.domElement);
 container.appendChild(renderer.domElement);
-document.getElementById("myDiv").appendChild(container);
 const scene = new _three.Scene();
-const camera = new _three.PerspectiveCamera(15, 1.5, 0.1, 1000);
+const camera = new _three.PerspectiveCamera(15, aspactRatio, 0.1, 1000);
 renderer.setClearColor("#e7f6fe");
 const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElement);
 camera.position.set(2.5, 1, 0);
@@ -577,42 +578,134 @@ const directionalLight = new _three.DirectionalLight(0xffffff, 0.2);
 directionalLight.position.set(0, 1, 0);
 scene.add(directionalLight);
 renderer.render(scene, camera);
-console.log(camera.position.x, camera.position.y, camera.position.z);
-console.log(camera.rotation.x, camera.rotation.y, camera.rotation.z);
+// console.log(camera.position.x, camera.position.y, camera.position.z);
+// console.log(camera.rotation.x, camera.rotation.y, camera.rotation.z);
 orbit.update();
 // const grid = new THREE.GridHelper(30, 30);
 // scene.add(grid);
 const assetLoader = new (0, _gltfloaderJs.GLTFLoader)();
 let mixer;
+let clips;
 assetLoader.load(monkeyUrl.href, function(gltf) {
     const model = gltf.scene;
     model.position.set(0, -0.6, 0);
     scene.add(model);
     mixer = new _three.AnimationMixer(model);
-    const clips = gltf.animations;
-    // Play a certain animation
-    const clip = _three.AnimationClip.findByName(clips, "letterA");
-    const action = mixer.clipAction(clip);
-    action.play();
-    const bone = gltf.scene.getObjectByName("mixamorigLeftHand");
-// Play all animations at the same time
-// clips.forEach(function(clip) {
-//     const action = mixer.clipAction(clip);
-//     action.play();
-// });
+    clips = gltf.animations;
+    sendAnimation("letterA");
 }, undefined, function(error) {
     console.error(error);
 });
 const clock = new _three.Clock();
+let isDefaultAnimationPlaying = false;
+let defaultAction;
+let factor = 2;
+function sendAnimation(animationName, action1 = null, clip = null) {
+    if (!mixer) return;
+    //    console.log(mixer);
+    if (animationName == "letterA" && !isDefaultAnimationPlaying) {
+        // console.log(mixer);
+        mixer.stopAllAction();
+        mixer._actions.forEach((action1)=>mixer.uncacheAction(action1));
+        defaultAction = mixer.clipAction(_three.AnimationClip.findByName(clips, "letterA"));
+        defaultAction.timeScale = factor; // Adjust the playback speed by setting the timeScale
+        // If the animation is currently playing, update the timeScale immediately
+        if (defaultAction.isRunning()) {
+            const elapsedTime = mixer.time - defaultAction.time;
+            defaultAction.time = mixer.time - elapsedTime / factor;
+        }
+        defaultAction.setLoop(_three.LoopRepeat); // Set default animation to loop
+        defaultAction.play();
+        isDefaultAnimationPlaying = true;
+    } else if (animationName != "letterA") {
+        if (clip) {
+            action1.setLoop(_three.LoopOnce); // Play only once
+            action1.clampWhenFinished = true; // Stop at the last frame
+            action1.play();
+            action1.fadeOut(1.0); // Fade out the animation after completion
+            action1.reset(); // Reset the animation to the beginning
+            action1.play();
+        }
+        return;
+    }
+}
 function animate() {
     if (mixer) mixer.update(clock.getDelta());
     renderer.render(scene, camera);
+    orbit.update();
 }
 renderer.setAnimationLoop(animate);
-window.addEventListener("resize", function() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+function handleWindowResize() {
+    camera.aspect = aspactRatio;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(container.clientWidth, container.clientWidth / aspactRatio);
+}
+// handleWindowResize();
+// window.addEventListener('resize', handleWindowResize);
+const resizeObserver = new ResizeObserver(handleWindowResize);
+resizeObserver.observe(container);
+// MAIN ANIMATION ARRAYS************************************************************************************************************
+classes = [
+    "how are",
+    "you",
+    "good",
+    "morning",
+    "a",
+    "b",
+    "c",
+    " "
+];
+animationArray = {
+    "a": "letterA",
+    "b": "letterB",
+    "c": "letterC"
+};
+function animationController(aniArray1) {
+    if (aniArray1.length != 0) {
+        const clip = _three.AnimationClip.findByName(clips, aniArray1[0]);
+        if (isDefaultAnimationPlaying) {
+            defaultAction.stop();
+            isDefaultAnimationPlaying = false;
+        }
+        mixer.stopAllAction();
+        mixer._actions.forEach((action1)=>mixer.uncacheAction(action1));
+        action = mixer.clipAction(clip);
+        action.timeScale = factor; // Adjust the playback speed by setting the timeScale
+        // If the animation is currently playing, update the timeScale immediately
+        if (action.isRunning()) {
+            const elapsedTime = mixer.time - action.time;
+            action.time = mixer.time - elapsedTime / factor;
+        }
+        sendAnimation(aniArray1[0], action, clip);
+        aniArray1.shift();
+        // console.log(action.getClip().duration);
+        setTimeout(()=>animationController(aniArray1), action.getClip().duration * 1000 / factor);
+    } else sendAnimation("letterA");
+}
+$(document).ready(function() {
+    var text = "";
+    $("#send").click(function(event) {
+        aniArray = [];
+        text = $("#result").val();
+        let lowercaseStr = text.toLowerCase();
+        let isFound = false;
+        while(lowercaseStr != ""){
+            isFound = false;
+            classes.forEach(function(singleClass) {
+                let index = lowercaseStr.indexOf(singleClass);
+                if (index == 0) {
+                    isFound = true;
+                    lowercaseStr = lowercaseStr.replace(singleClass, "");
+                    aniArray.push(animationArray[singleClass]);
+                }
+            });
+            if (!isFound) {
+                console.log("Char not Found: " + lowercaseStr[0]);
+                lowercaseStr = lowercaseStr.slice(1);
+            }
+        }
+        setTimeout(()=>animationController(aniArray), isDefaultAnimationPlaying ? (defaultAction.getClip().duration - defaultAction.time) * 1000 / factor : 400);
+    });
 });
 
 },{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/loaders/GLTFLoader.js":"dVRsF","6a88da7664c5c14b":"hYh8L"}],"ktPTu":[function(require,module,exports) {

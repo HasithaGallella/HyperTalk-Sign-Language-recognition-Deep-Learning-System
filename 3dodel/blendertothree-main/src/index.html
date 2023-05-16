@@ -159,7 +159,7 @@
                                         </div>
 
 
-                                        
+
 
                                         <div class="col-md-12">
                                             <img src="static/assets/myimages/WhatsApp Image 2022-07-01 at 1.12.33 PM.jpeg"
@@ -193,18 +193,19 @@
 
                     <div class="row">
                         <div class="col-md-12 col-xs-12 video-size">
+
                             <!-- load hang model -->
                             <div id="myDiv">
                             </div>
-                        </div>
-                        <div class="col-md-12 mb-3" >
 
-                            <div id='result'>
-                                Your text will appear here
-                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+
+                            <input style="width:90%;" class="mx-3 my-2" type="text" id="result">
                             <br>
                             <div id='record'>
-                                <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
+                                <button  class='btn btn-info btn-sm' id="re" onmousedown="startRecording()" onmouseup="stopRecording()">record</button>
                                 <button class='btn btn-info btn-sm ml-3' value="Send" id="send">Send</button>
                             </div>
                         </div>
@@ -212,7 +213,7 @@
                     </div>
 
 
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary model-close" data-bs-dismiss="modal">Close</button>
@@ -348,7 +349,7 @@
     <!-- <script type="module"src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script type="module" src="static/assets_final/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="static/assets_final/vendor/glightbox/js/glightbox.min.js"></script>
-    <script  src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script type="module" src="static/assets_final/vendor/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="static/assets_final/vendor/php-email-form/validate.js"></script>
 
@@ -372,7 +373,7 @@
     <script type="module" src="static/assets/js/video.js"></script>
     <script type="module" src="static/assets/js/slick-slider.js"></script>
     <script type="module" src="static/assets/js/custom.js"></script>
-       <script src="./js/scripts.js" type="module"></script>
+    <script src="./js/scripts.js" type="module"></script>
     <script type="module">
 
         import AOS from 'aos';
@@ -429,13 +430,13 @@
     </script>
 
     <script>
-       
+
         var isactivated = false;
         $(document).ready(function () {
             // var html="<div class=\"backgroundImage mx-auto text-center\" style=\"height:600px;background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url( 'https://www.ohio.edu/sites/ohio.edu.news/files/2020-04/ASL_CHSP_Apr2020.jpeg');\"><img  id=\"modelImage\"src=\"static/assets/myimages/pngwing.com.png'%}\" alt=\"\"></div>";
             // $("#modelDiv").html(html);
         });
-        let finalUrl='http://127.0.0.1:8000';
+        let finalUrl = 'http://127.0.0.1:8000';
         let camera_button = document.getElementById("start-camera");
         let video = document.getElementById("video");
         let click_button = document.getElementById("click-photo");
@@ -451,7 +452,7 @@
         // alert("ok");
         // start captureing
         camera_button.addEventListener('click', async function () {
-           
+
             stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
             video.srcObject = stream;
             looping = true;
@@ -481,7 +482,7 @@
             // alert("ok");
             $.ajax({
                 type: "POST",
-                url: finalUrl+"/sayWord",
+                url: finalUrl + "/sayWord",
                 data: {
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     word: word
@@ -525,7 +526,7 @@
             let image_data_url = canvas.toDataURL('image/jpeg');
             $.ajax({ // async:false,
                 type: "POST",
-                url: finalUrl+"/imageData",
+                url: finalUrl + "/imageData",
                 data: {
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     image: image_data_url
@@ -545,16 +546,30 @@
     </script>
 
     <script>
-        function startConverting() {
-            document.getElementById("re").style.visibility = "hidden";
-            var r = document.getElementById('result');
-            var spr = new webkitSpeechRecognition(); // Initialisation of web Kit
-            spr.continuous = false; // True if continous conversion is needed, false to stop transalation when paused
-            spr.interimResults = true;
-            spr.lang = 'en-IN'; // Set Input language
-            spr.start(); // Start Recording the voice
-            var ftr = '';
-            spr.onresult = function (event) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        recognition.lang = 'en-US';
+
+        let isRecording = false;
+
+    var ftr = '';
+    const startRecording = () => {
+        ftr='';
+      if (!isRecording) {
+        isRecording = true;
+        recognition.start();
+        console.log('Speech recognition started...');
+      }
+    };
+
+    const stopRecording = () => {
+      if (isRecording) {
+        isRecording = false;
+        recognition.stop();
+        console.log('Speech recognition stopped.');
+      }
+    };
+    
+     const processResult = (event) =>{
                 var interimTranscripts = '';
                 for (var i = event.resultIndex; i < event.results.length; i++) {
                     var transcript = event.results[i][0].transcript;
@@ -566,24 +581,35 @@
 
 
                 }
-                r.innerHTML = ftr + interimTranscripts;
+                document.getElementById('result').value = ftr + interimTranscripts;
+            
+
             };
-            spr.onerror = function (event) { };
-        }
-        $(document).ready(function () {
-            $("#send").click(function (event) {
-                $.ajax({
-                    type: "POST",
-                    url: finalUrl+"/audio_data/",
-                    data: {
-                        send: $('#result').html()
-                    },
-                    success: function () {
-                        alert("Audio succesfully Submitted");
-                    }
-                });
-            });
-        });
+
+        recognition.onresult = processResult;
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+        };
+
+
+        // $(document).ready(function () {
+        //     $("#send").click(function (event) {
+        //         $.ajax({
+        //             type: "POST",
+        //             url: finalUrl + "/audio_data/",
+        //             data: {
+        //                 send: $('#result').val()
+        //             },
+        //             success: function () {
+        //                 alert("Audio succesfully Submitted");
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
+     <script type="module">
+        //   handleWindowResize();
+        //   alert("ok");
     </script>
 
 </body>
