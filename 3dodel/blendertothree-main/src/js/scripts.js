@@ -202,7 +202,8 @@ $(document).ready(function () {
             }
 
         }
-      
+      if(aniArray.length>0){
         setTimeout(() => animationController(aniArray), isDefaultAnimationPlaying ? (defaultAction.getClip().duration - defaultAction.time) * 1000/factor : 400);
+      }
     });
 });
