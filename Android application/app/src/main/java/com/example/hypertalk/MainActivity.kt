@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mWebView = findViewById<View>(R.id.WebView) as WebView
-        mWebView.loadUrl("http://10.10.24.62:9000/")
+        mWebView.loadUrl("https://www.youtube.com/")
 
         val webSetting:WebSettings = mWebView.settings
         webSetting.javaScriptEnabled=true
