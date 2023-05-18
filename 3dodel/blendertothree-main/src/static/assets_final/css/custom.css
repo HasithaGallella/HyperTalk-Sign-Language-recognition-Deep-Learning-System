@@ -67,6 +67,32 @@
 }
 
 
+#srcImage {
+    width: 100% !important;
+}
+
+#record {
+    display: inline-flex;
+    width: 100%;
+  }
+  
+  #record button {
+    width: 50%;
+    padding: 8px;
+    margin: 5px;
+    background-color: #0D6EFD;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+  }
+
+  #record button:hover {
+    color: #fff;
+    background-color: #3442db;
+  }
+  
+
+
 @media only screen and (max-width: 990px) {
     .logo-img {
         display: none;
@@ -106,15 +132,9 @@
         display: none;
     }
 
-
-
-}
-
-@media only screen and (max-width: 760px) {
     .video-size {
-        width: 92vw;
+        width: 100%;
         margin-left: 0;
     }
-
-
 }
+

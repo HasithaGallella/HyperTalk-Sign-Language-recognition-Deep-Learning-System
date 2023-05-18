@@ -1,0 +1,37 @@
+.backgroundImage {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+#modelImage {
+  width: 30%;
+  height: 18%;
+  object-fit: scale-down;
+  margin-top: 23%;
+  transition: transform .2s;
+}
+
+#modelImage:hover {
+  transform: scale(1.2);
+}
+
+.displayNone {
+  display: none;
+}
+
+.dicplayVisible {
+  display: block;
+}
+
+.headingFont {
+  font-size: 40px !important;
+  font-weight: bold !important;
+}
+
+.teamMembers {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=index.79309007.css.map */
